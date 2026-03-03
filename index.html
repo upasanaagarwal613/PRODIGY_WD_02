@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Smart Stopwatch</title>
+<link rel="stylesheet" href="task02.css">
+</head>
+
+<body class="mix">
+
+<div class="container">
+<h1>⏱ AI Smart Stopwatch</h1>
+
+<div class="time" id="display">00:00:00:00</div>
+
+<div>
+<button onclick="start()">Start</button>
+<button onclick="pause()">Pause</button>
+<button onclick="reset()">Reset</button>
+
+<div class="theme-wrapper">
+<button onclick="toggleTheme()">🎨 Theme</button>
+<div class="theme-menu" id="themeMenu">
+<button onclick="setTheme('mix')">🌈 Pink Mix</button>
+<button onclick="setTheme('ai')">🤖 Dark AI</button>
+</div>
+</div>
+</div>
+
+<!-- NOTES -->
+<div class="note-input">
+<input type="text" id="noteText" placeholder="Write note...">
+<button onclick="addNote()">Add</button>
+</div>
+
+<div class="list" id="noteList"></div>
+
+</div>
+<script src="task02.js"></script>
+</body>
+</html>

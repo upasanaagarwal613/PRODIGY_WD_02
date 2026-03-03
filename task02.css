@@ -1,0 +1,143 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+color:white;
+}
+
+/* ===== PINK MIX FLOATING THEME ===== */
+body.mix::before{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background:linear-gradient(270deg,
+#ff2a6d,
+#ff0080,
+#d000ff,
+#7928ca,
+#ff2a6d);
+background-size:600% 600%;
+animation:gradientMove 16s ease infinite;
+z-index:-1;
+filter:blur(120px);
+opacity:0.65;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* ===== DARK AI THEME ===== */
+body.ai{
+background:#0a0f1c;
+}
+
+body.ai::before{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background:radial-gradient(circle at 30% 30%,#ff008055,transparent 40%),
+radial-gradient(circle at 70% 70%,#a100ff55,transparent 40%);
+z-index:-1;
+filter:blur(120px);
+animation:aiMove 12s infinite alternate ease-in-out;
+}
+
+@keyframes aiMove{
+from{transform:translate(-5%, -5%)}
+to{transform:translate(5%, 5%)}
+}
+
+/* ===== CONTAINER ===== */
+.container{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(25px);
+padding:35px;
+border-radius:25px;
+width:450px;
+text-align:center;
+box-shadow:0 20px 60px rgba(0,0,0,0.6);
+z-index:2;
+}
+
+h1{margin-bottom:10px;}
+
+.time{
+font-size:34px;
+margin:15px 0;
+letter-spacing:2px;
+}
+
+/* BUTTONS */
+button{
+padding:8px 18px;
+border:none;
+border-radius:50px;
+cursor:pointer;
+font-size:13px;
+background:rgba(255,255,255,0.15);
+color:white;
+margin:5px;
+transition:0.3s;
+}
+
+button:hover{
+transform:translateY(-2px);
+box-shadow:0 6px 20px rgba(255,255,255,0.3);
+}
+
+/* NOTES */
+.note-input{
+margin-top:15px;
+display:flex;
+gap:5px;
+}
+
+.note-input input{
+flex:1;
+padding:8px;
+border:none;
+border-radius:10px;
+}
+
+.list{
+max-height:100px;
+overflow-y:auto;
+text-align:left;
+font-size:12px;
+margin-top:10px;
+}
+
+.item{
+display:flex;
+justify-content:space-between;
+margin-bottom:5px;
+}
+
+/* THEME */
+.theme-wrapper{
+position:relative;
+display:inline-block;
+}
+
+.theme-menu{
+display:none;
+position:absolute;
+top:40px;
+background:rgba(0,0,0,0.85);
+padding:10px;
+border-radius:12px;
+}
